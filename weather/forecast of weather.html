@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/util.js"></script>
+    <script src="js/whichCity.js"></script>
+    <style>
+
+        body{
+            background:#333;
+            font-family:'microsoft yahei';
+        }
+
+
+        @font-face {font-family: "iconfont";
+            src: url('font/iconfont.eot?t=1475904109'); /* IE9*/
+            src: url('font/iconfont.eot?t=1475904109#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('font/iconfont.woff?t=1475904109') format('woff'), /* chrome, firefox */
+            url('font/iconfont.ttf?t=1475904109') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url('font/iconfont.svg?t=1475904109#iconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .box{
+            padding-top:30px;
+            height:540px;
+            width:320px;
+            -webkit-border-radius:;
+            -moz-border-radius:;
+            border-radius:5px;
+            margin:0 auto;
+            position:relative;
+            overflow: hidden;
+            background-image:linear-gradient(to top left, #00e6b8,#00c3e6);
+        }
+
+        .container ul{
+            position: relative;
+            height:100%;
+        }
+
+        .container ul li{
+            text-align: center;
+            font-size:18px;
+            line-height:30px;
+            color:#005075;
+            font-weight:200;
+
+        }
+
+        #temperature{
+            font-size:140px;
+            font-family:'microsoft yahei';
+            color:#d1fffb;
+            line-height:200px;
+            font-weight:normal;
+           
+            
+        }
+
+        #temperature sup{
+            font-size:30px;
+            position: absolute;
+            top:114px;
+            font-weight:600;
+            right:49px;
+        }
+
+        #cityName{
+            font-size:20px;
+
+        }
+
+        #weatherType{
+            font-size:14px;
+        }
+
+        #weatherType img{
+            padding:0 5px;
+        }
+
+        #weatherType span{
+            font-family: 'iconfont';
+            font-size:18px;
+            padding-right:5px;:
+        }
+
+        #other{
+            height:160px;
+            padding-top:30px;
+            width:100%;
+            background:rgba(10,10,10,0.6);
+            position: absolute;
+            bottom:0;
+            left:0;
+            text-align: center;
+        }
+
+        #other ul{
+            display: inline-block;
+        }
+
+        #other ul li{
+            
+            width:60px;
+            box-shadow: 1px 0px 0px rgba(11,111, 105, 0.4);
+            border-right:1px solid #0f5451;
+        }
+
+        #other li:last-child{
+            border:none;
+            box-shadow: none;
+
+
+        }
+
+
+
+        #other span{
+            font-family:'iconfont';
+        }
+
+        #other li{
+            font-size:12px;
+            font-weight:100;
+            color:#d3fff1;
+            float:left;
+        }
+
+        #city{
+            width:80px;
+            height:35px;
+            border:none;
+            top:0;
+            right:0;
+        }
+
+
+    </style>
+    <script>
+        window.onload = function () {
+
+            //当用户更改城市时监听change事件
+             document.getElementById("city").onchange=function(){
+                 fill();
+            }
+            function fill() {
+
+                
+
+                //获取用户选择的城市
+                var city = document.getElementById("city").value;
+
+                //从网上获取用户选择的城市天气数据
+                var url = "http://wthrcdn.etouch.cn/weather_mini?city=" + whichCity(city);
+
+
+                //发送ajax请求
+                $.getJSON(url, function (data) {
+
+                    //获取天气值 ，然后判断显示对应的天气图标
+                    var weatherIco=whatWeather(data.data.forecast[0].type);
+                   // onlyNum(data.data.forecast[0].low)
+
+                    //把城市名给DOM相应的元素
+                    document.getElementById('cityName').innerHTML = data.data.city;
+
+                    //把天气数据和对应的图标给DOM相应的元素
+                    document.getElementById('weatherType').innerHTML ='<span>'+weatherIco+';</span>'+data.data.forecast[0].type;
+
+                    //把气温数据和对应的图标给DOM相应的元素
+                    document.getElementById('temperature').innerHTML = data.data.wendu+'<sup>○</sup>';
+
+                    //把日期传给DOM元素
+                    document.getElementById('air').innerHTML = data.data.forecast[0].date;
+
+                    //把当日的最低气温传给DOM元素
+                    document.getElementById('warnning').innerHTML = data.data.forecast[0].low;
+
+
+
+                    //为今天填充数据
+
+
+                //获取日期
+                var oDate=new Date();      //实例化一个日期对象
+                var weeks=oDate.getDay();
+                var n;
+
+              
+               var html='<ul class="list-group list-unstyled list-inline">';
+                for(var i = 0; i<5; i++){
+                     n=weeks;
+                    switch(n){
+                        case 0:
+                        n='周日';
+                        break;
+
+                        case 1:
+                        n='周一';
+                        break;
+
+                        case 2:
+                        n='周二';
+                        break;
+
+                        case 3:
+                        n='周三';
+                        break;
+
+                        case 4:
+                        n='周四';
+                        break;
+
+                        case 5:
+                        n='周五';
+                        break;
+
+                        case 6:
+                        n='周六';
+                        break;
+                    }
+
+                     weeks++;
+                     
+                    if(weeks>6){
+                        weeks=0;
+                     }
+
+                    html+='<li><p>'+n+'</p>';
+                    weatherIco=whatWeather(data.data.forecast[i].type);
+                    html+='<span>'+weatherIco+'</span>';
+                    html+='<p>'+onlyNum(data.data.forecast[i].low, data.data.forecast[i].high)+'</p></li>';
+
+                }
+
+                html+='</ul>';
+                
+
+                var other=document.getElementById("other").innerHTML="";
+                var other=document.getElementById("other").innerHTML=html;
+
+               
+                },function (err) {
+                    document.getElementById('cityName').innerHTML ='网络错误，代码'+err
+                });
+            }
+
+            //页面加载时调用函数,显示默认城市天气
+            fill();
+
+            //截取气温数据的最低温和最高温的数字部分
+            function onlyNum(obj1,obj2){
+                var org=/\d+/g;
+                var pattern1=obj1.match(org);
+                var pattern2=obj2.match(org);
+                return pattern1+' / '+pattern2;
+            }
+
+            /*给未来几天填充数据的方法*/
+            function fillDate(day) {
+                var oDate=new Date();      //实例化一个日期对象
+                var weeks=oDate.getDay();
+                var fDay=oDate.setDate(2);
+                var fWeeks=oDate.getDay();
+                if(fWeeks>6){
+                    fWeeks=0;
+                }
+          
+            }
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <select name="" id="city" class="">
+        <option value="shenzhen" selected="selected">深圳</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="guangzhou">广州</option>
+        <option value="chongqing">重庆</option>
+        <option value="tianjing">天津</option>
+        <option value="nanjing">南京</option>
+        <option value="suzhou">苏州</option>
+        <option value="hangzhou">杭州</option>
+        <option value="shijiazhuan">石家庄</option>
+        <option value="zhengzhou">郑州</option>
+        <option value="wuhan">武汉</option>
+        <option value="changsha">长沙</option>
+        <option value="nanchang">南昌</option>
+        <option value="shengyun">沈阳</option>
+        <option value="changchun">长春</option>
+        <option value="haerbin">哈尔滨</option>
+        <option value="xian">西安</option>
+        <option value="taiyuan">太原</option>
+        <option value="jinan">济南</option>
+        <option value="chengdu">成都</option>
+        <option value="xining">西宁</option>
+        <option value="haikou">海口</option>
+        <option value="guiyang">贵阳</option>
+        <option value="fuzhou">福州</option>
+        <option value="taibei">台北</option>
+        <option value="kunmin">昆明</option>
+        <option value="lasa">拉萨</option>
+        <option value="yinchuan">银川</option>
+        <option value="wulumuqi">乌鲁木齐</option>
+        <option value="huhehaote">呼和浩特</option>
+        <option value="hongkong">香港</option>
+        <option value="aumeng">澳门</option>
+
+
+    </select>
+    <div class="box">
+        <ul class="list-group list-unstyled">
+            <li id="cityName"></li>
+            <li id="weatherType"></li>
+            <li id="temperature"></li>
+            <li id="air"></li>
+            <li id="warnning"></li>
+            <li id="other">
+                <ul class="list-group list-unstyled list-inline">
+                    <li>
+                        <p>今天</p>
+                        <img src="" alt="">
+                        <p>32/26</p>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+</body>
+</html>

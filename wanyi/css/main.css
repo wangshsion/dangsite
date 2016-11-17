@@ -1,0 +1,181 @@
+body{
+    background:#333;
+}
+.container{
+    background-color: #fff;
+    padding:0 0 30px 0;
+    margin-top:20px;
+    width:699px;
+
+}
+ .header{
+    border-top:1px solid #c4d6ec;
+    background:#e5eef8;
+    height:40px;
+     padding:0 15px;
+ }
+
+ .header div{
+     line-height:35px;
+ }
+
+ .header div a{
+     display: inline-block;
+ }
+
+ .header div:first-child{
+     float:left;
+ }
+
+ .header div:last-child{
+     float:right;
+ }
+
+ .header .btnBox a{
+     line-height:24px;
+     background:url(../images/sprites_3.2.png) no-repeat 0 -65px;
+     height:24px;
+     color:#fff;
+     width:80px;
+     text-align: center;
+     font-size:12px;
+ }
+
+ .header .btnBox a:nth-of-type(1){
+     font-weight:bolder;
+     font-size:14px;
+     height:26px;
+ }
+
+ .header .btnBox a:nth-of-type(2){
+     background:url(../images/sprites_3.2.png) no-repeat 0 -466px;
+    width:110px;
+     height:26px;
+     color:#2d2d2d;
+ }
+
+ .header .pageBtn a{
+     border:1px solid #ddd;
+     font-size:12px;
+     padding:0 10px;
+     height:22px;
+     line-height:20px;
+     background-color: #fff;
+ }
+
+.inputBox{
+    text-align: center;
+    padding:0 15px;
+}
+
+.inputBox textarea{
+    width:100%;
+
+}
+
+.inputBox .send{
+    width:190px;
+}
+
+.inputBox .checkbox {
+    display: inline-block;
+    width:73px;
+    font-weight:normal;
+    padding-right:15px;
+}
+
+ .list-unstyled li{
+     padding:0 10px;
+
+ }
+
+ .inputBox .register input{
+     height:30px;
+     width:120px;
+     padding:0 10px;
+     font-size:12px;
+
+ }
+
+ .inputBox input[type=password]{
+     font-size:12px;
+     margin-left:10px;
+
+
+ }
+
+.listTitle{
+    height:35px;
+    background-color: #e5eef8;
+    border-top:1px solid #c4d6ec;
+    line-height:32px;
+}
+
+.redcolor{
+    color:red;
+}
+
+.listTitle .hotConmment p, .listTitle .hotConmment h4 {
+    display: inline;
+
+}
+
+.comment-list .contente{
+    width:100%;
+    min-height:56px;
+    padding-top:8px;
+}
+
+
+.listTitle .hotConmment h4 {
+    font-weight:bolder;
+}
+
+.listTitle .hotConmment p{
+    font-size:12px;
+
+}
+
+.listTitle .note{
+    line-height:34px;
+    font-size:12px;
+}
+
+.comment-list{
+    border-bottom:1px dotted #ddd;
+}
+
+
+.contente .userPic{
+    margin-top:18px;
+    padding-right:10px;
+    width:6%;
+}
+
+.contente .userPic img{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+}
+
+.contente .userInfo{
+    line-height:31px;
+    padding:8px 0  0 10px ;
+    width:94%;
+
+    min-height:56px;
+}
+
+ .time p{
+    line-height:22px;
+}
+
+
+
+
+
+
+
+
+
+

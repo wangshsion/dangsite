@@ -1,0 +1,272 @@
+@charset 'utf-8';
+
+ body,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,p{
+	padding:0;
+	margin:0;
+}
+
+body{
+	background-color:#fff;
+	font-family: Arial,'Microsoft yahei','宋体';
+}
+
+ul,li{
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+}
+
+.container{
+	width:1200px;
+	margin:0 auto;
+	position: relative;
+}
+
+.header .top{
+	height:35px;
+	background-color:#171f2a;
+}
+
+.header .login_bar{
+	float:left;
+	color:#fff;
+	font-size:12px;
+	line-height: 35px;
+}
+
+.header .login_bar a{
+	color:#929eaa;
+}
+
+.header .login_bar .space{
+	padding:0 10px;
+	color:#4b5053;
+}
+
+.header .more{
+	float:right;
+	height:35px;
+}
+
+.header .more li{
+	float:left;
+	height:35px; 
+	line-height:35px;
+}
+
+.header .more li a{
+	padding:0 10px; 
+	font-size:12px;
+	border-left:1px solid #0a0c10;
+	border-right:1px solid #4b5366;
+	color:#b1b1b1;
+}
+
+.header .more li:last-child a{
+	border:none;
+}
+
+.header .more .color_yellow{
+	color:#ffbf0d;
+}
+
+.header .more .manage{
+	background:url(../images/tencent_03.jpg) no-repeat 10px center;
+	padding-left:34px;
+}
+
+.header .more .client{
+	padding-right:29px;
+	background:url(../images/tencent_06.jpg) no-repeat 70px center;
+}
+
+.header .nav{
+	background-color:#2c3343;
+	height:60px;
+}
+
+.header .logos{
+	float:left;
+	padding-top:5px;
+}
+
+.header .logos a{
+	padding:0 13px 0 8px;
+}
+.header .nav_link{
+	float:left;
+
+}
+
+.header .nav_link li{
+	float:left;
+}
+
+.header .nav_link li a{
+	display: block;
+	padding:0 20px;
+	height:60px;
+	color:#f8f8ff;
+	font-weight:100;
+	line-height: 60px;
+	font-size:16px;
+}
+
+.header .nav_link li .active{
+	background:#202833;
+	color:#fdbb03;
+}
+
+.header .nav_link li a:hover{
+	background:#202833;
+	color:#fdbb03;
+}
+
+/*尾部*/
+
+.footer {
+	background: #27303f;
+}
+
+.footer .video{
+	text-align: center;
+}
+
+.footer .video img{
+	width:100%;
+}
+
+.footer .site_info{
+	width:1200px;
+	margin:0 auto;
+	height:221px;
+	padding-top:28px;
+
+}
+
+.footer .site_info dl{
+	float:left;
+	width:192px;
+}
+
+.footer .site_info dt{
+	font-size:14px;
+	color:#fff;
+	line-height:43px; 
+}
+
+.footer .site_info dl dd{
+	color:#828993;
+	font-size:12px;
+	line-height:26px;
+}
+
+.footer .site_info dd a{
+	font-size:12px;
+	color:#828993;
+}
+
+.footer .site_info dl:first-child{
+	padding-left:10px;
+}
+
+.footer .site_info .weibo{
+	width:182px;
+}
+
+.footer .site_info .weibo .code{
+	padding-bottom:9px;
+}
+
+.footer .site_info .weibo .weibo_icon{
+	padding-left:12px;
+	line-height:26px;
+}
+
+.footer .site_info .prove dd{
+	height:102px;
+	padding-left:80px;
+}
+
+.footer .site_info .prove .credible{
+	background: url(../images/tencent_85.png) no-repeat left top;
+}
+
+.footer .site_info .prove .iso{
+	background: url(../images/tencent_86.png) no-repeat left top;
+}
+
+.footer .site_info .prove h4{
+	font-weight:normal;
+	font-size:14px;
+	color:#fff;
+}
+
+.footer .site_info .prove p{
+	color:#828993;
+	font-size:12px;
+	line-height:20px;
+
+}
+
+.footer .branch{
+	text-align: center;
+	width:1200px;
+	margin:0 auto;
+	border-bottom:1px solid #343e4a;
+
+}
+
+.footer  .branch ul{
+	display: inline-block;
+	height:33px;
+	
+
+}
+
+.footer .branch li{
+	float:left;
+	color:#626a77;
+	font-size:14px;
+	line-height:33px;
+	padding-left:5px;
+}
+
+.footer .branch li span{
+	font-size:20px;
+	line-height:33px;
+	vertical-align: middle;
+	
+}
+
+.footer .branch li a{
+	color:#626a77;
+	padding-right:5px;
+	font-size:12px;
+	line-height: 33px;
+	
+}
+
+.footer .branch li:first-child{
+	padding-right:18px;
+}
+
+.footer .copyright{
+	text-align:center;
+	font-size:12px;
+	color:#5a636c;
+	line-height:30px;
+	padding:12px 0 77px 0;
+}
+
+
+
+
+
+
+
+
+
+

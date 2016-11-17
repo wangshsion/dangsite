@@ -1,0 +1,16 @@
+<ion-view id="cart" view-title="定单">
+    <ion-content>
+        <div class="list" ng-repeat="order in data2">
+
+            <div class="item">商品名：{{order.title}}</div>
+            <div class="item">数量：{{order.quantity}}</div>
+            <div class="item">价格：{{order.price}}</div>
+            <div class="item">小计:{{order.price * order.quantity}}</div>
+            <div class="item">总计:{{total}}</div>
+        </div>
+
+
+
+
+    </ion-content>
+</ion-view>

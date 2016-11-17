@@ -1,0 +1,410 @@
+@charset 'utf-8';
+
+/*<=1200px notebook*/
+@media screen and (max-width:1200px){
+	.container{
+		width:98%;
+	}
+
+	.banner_text{
+		width:36%;
+		height:275px;
+		position: absolute;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		margin:auto;
+		text-align:center;
+		font-family: "Montserrat",arial;
+	}
+
+
+	.part_1{
+		text-align:center;
+		padding-top:50px;
+	}
+
+	.banner_text{
+		width:48%;
+		height:275px;
+		
+	}
+
+	.banner_text .title_1{
+		font-size:1.9rem;
+		line-height: 8rem;
+		letter-spacing: 8px;
+	
+	}
+
+	.banner_text .big_title{
+		font-size:5.1rem;
+		line-height:102px;
+		border:7px solid #000;
+		
+	}
+
+	.banner_text .title_2{
+		padding-top:36px;
+		line-height:43px;
+		font-size:2.9rem;
+	
+	}
+}
+/*<=1024px Ipad mini*/
+
+@media screen and (max-width:1024px){
+	header .nav{
+		display:none;
+	}
+
+	header .shorte .menu_bar{
+		display:inline-block;
+	}
+
+	.banner_text{
+		width:36%;
+		height:275px;
+		position: absolute;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		margin:auto;
+		text-align:center;
+		font-family: "Montserrat",arial;
+	}
+
+
+	.part_1{
+		text-align:center;
+		padding-top:50px;
+	}
+
+	.banner_text{
+		width:48%;
+		height:275px;
+		
+	}
+
+	.banner_text .title_1{
+		font-size:2rem;
+		line-height:8rem;
+		letter-spacing:8px;
+	}
+
+	.banner_text .big_title{
+		font-size:6rem;
+		line-height:102px;
+		border:7px solid #000;	
+	}
+
+	.banner_text .title_2{
+		padding-top:36px;
+		line-height:43px;
+		font-size:2.6rem;
+	}
+
+	.part_1 .scription{
+		font-size:1.6rem;
+		line-height:33px;
+		padding:37px 0 350px; 
+		
+	
+	}
+
+	.part_5 .lists .fou {
+		padding:0;
+		width:25%;
+	}
+
+	.part_5 .lists .fou li{
+		float:left;
+		padding:0 12px 12px 0;
+		width:70px;
+		height:70px;
+		overflow:hidden; 
+	}
+
+	.part_5 .lists .fou li img{
+		height:70px;
+	}
+
+}
+
+/*<=768px Ipad mini*/
+@media screen and (max-width:768px){
+
+	header .nav li{
+		float:left;
+		margin:0 1.4rem;
+		font-family: "Montserrat",arial;
+	}
+
+	.banner_text{
+		width:80%;
+	}
+
+	header .nav li a{
+		font-size:1.2rem;
+		color:#343434;
+		text-transform:uppercase;
+	}
+
+	.banner_text .title_1{
+		font-size:2.2rem;
+		line-height:10rem;
+		letter-spacing:8px;
+	}
+
+	.banner_text .big_title{
+		font-size:6rem;
+		line-height:102px;
+		border:7px solid #000;	
+	}
+
+	.banner_text .title_2{
+		padding-top:36px;
+		line-height:35px;
+		font-size:2.9rem;
+	}
+
+	.part_1 p{ 
+		line-height:42px;
+		padding-bottom:34px;
+		width:95%;
+	}
+
+	.part_1 .scription{
+		font-size:1.6rem;
+		line-height:33px;
+		padding:37px 0 46%; 
+	}
+
+	.part_1 .sub_nav li{
+		width:100%;
+		height:185px;
+		float:none;
+		padding-top:8%;	
+	}
+
+	.part_2{
+		 padding:60px 0 60px 0;
+	}
+
+	.part_2 .column{
+		width:100%;
+		float:none;
+		margin:0 auto;
+	}
+
+	.part_2  .middle{
+		text-align:center;
+		padding:30px 0;
+	}
+
+	.part_2 .block p{
+		font-size:1.4rem;
+		line-height:26px;
+		padding-left:82px;
+		
+	}
+
+	.part_3 .works li{
+		background:#000;
+	}
+
+	.part_3 .mask_layer h4{
+		line-height:10%;
+		font-size:1.2rem;
+		font-weight:100;
+		padding-top:25%;
+		font-weight:normal;
+		
+	}
+
+	.part_3 .mask_layer span{
+		display: none;
+	}
+
+	.part_3 .mask_layer i{
+		display: none;
+	}
+
+	.part_4 .pic{
+		width:98%;
+		justify-content: space-between;
+	}
+
+	.part_4 .pic li{
+		width:49%;
+		line-height: 0;
+	}
+
+	.part_5 .part_5_top .scription{
+		line-height:26px;
+		font-size:1.4rem;
+		padding:0 2%;
+	}
+
+	.part_5 .lists .list{
+		float:none;
+		width:80%;
+		margin:0 auto;
+		padding:0 0 50px 0;
+
+
+	}
+
+	header .shorte .menu_bar{
+		display:inline-block;
+	}
+
+	header .nav{display: none;}
+	
+}
+
+
+/*<=414px iphone plus*/
+@media screen and (max-width:414px){
+	.container{
+		width:98%;
+	}
+
+	header .shorte a{
+		display: none;
+	}
+
+	header .shorte a:nth-of-type(1){
+		display: inline-block;
+		padding-right:10px;
+
+	}
+
+	.banner_text{
+		width:75%;
+	}
+
+	.banner_text .title_1{
+		font-size:1.8rem;
+		line-height:6rem;
+		letter-spacing:5px;
+	}
+
+	.banner_text .big_title{
+		font-size:4.2rem;
+		line-height:102px;
+		border:5px solid #000;	
+	}
+
+	.banner_text .title_2{
+		padding-top:25px;
+		line-height:3.2rem;
+		font-size:2rem;
+	}
+
+	.part_1 p{ 
+		line-height:42px;
+		padding-bottom:34px;
+		width:95%;
+	}
+
+	.part_1 .scription{
+		font-size:1.6rem;
+		line-height:2.6rem;
+		padding:37px 0 46%; 
+	}
+
+	.part_1 .sub_nav li{
+		width:100%;
+		height:120px;
+		float:none;
+		padding-top:8%;	
+	}
+
+	.part_1 .sub_nav li a{
+		font-size:4rem;	
+	}
+
+	.part_1 .sub_nav li span{
+		font-size:1.4rem;
+		line-height:4.8rem;
+		display: block;
+	}
+
+	
+
+	.part_2{
+		 padding:60px 0 60px 0;
+	}
+
+	.part_2 .column{
+		width:100%;
+		float:none;
+		margin:0 auto;
+	}
+
+	.part_2  .middle{
+		text-align:center;
+		padding:30px 0;
+	}
+
+	.part_2 .block p{
+		font-size:1.4rem;
+		line-height:26px;
+		padding-left:82px;
+		
+	}
+
+
+	.part_3 .works li{
+		background:none;
+	}
+
+	.part_4 .pic{
+		width:98%;
+		justify-content: space-between;
+	}
+
+	.part_4 .pic li{
+		width:49%;
+		line-height: 0;
+	}
+
+	.part_5 .part_5_top .scription{
+		line-height:26px;
+		font-size:1.4rem;
+		padding:0 2%;
+	}
+
+	.part_5 .lists .list{
+		float:none;
+		width:95%;
+		margin:0 auto;
+		padding:0 0 50px 0;
+
+
+	}
+
+	footer{
+		padding:21px 0;
+
+	}
+
+	footer p{
+		padding:0 50px;
+	}
+
+	header .shorte .menu_bar{
+		display:inline-block;
+	}
+
+	header .nav{display: none;}
+
+
+
+}
+
+/*<=320px iphone5*/
+

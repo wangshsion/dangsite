@@ -1,0 +1,163 @@
+@charset 'utf-8';
+.container .feature_title{
+	font-size:28px;
+	color:#353334;
+	text-transform: uppercase;
+	line-height:108px;
+	text-align:center;
+
+}
+
+.container .many_feature{
+	height:475px
+}
+
+.container .item1{
+	padding-top:70px; 
+	height:277px;
+}
+
+.container .title{
+	color:#303435;
+	font-size:18px;
+	text-transform: uppercase;
+	background:#fff;
+	line-height:26px;
+	position: absolute;
+	left:0;
+	top:-15px;
+	padding-right:6px;
+
+}
+
+.container .item1 li{
+	float:left;
+	height:126px;
+	width:360px;
+	background:url(../images/ser-bg.png) no-repeat;
+} 
+
+.container .item1 i{
+	display:block;
+	float:left;
+	height:123px;
+	width:67px;
+}
+
+.container .item1 .speed{
+	background:#ec5741 url(../images/icon_0_03.png) no-repeat center;
+}
+
+.container .item1 .master{
+	background:#ec5741 url(../images/icon_0_09.png) no-repeat center;
+}
+
+.container .item1 .developers{
+	background:#ec5741 url(../images/icon_0_06.png) no-repeat center;
+}
+
+.container .item1 .details{
+	background:#ec5741 url(../images/icon_0_18.png) no-repeat center;
+}
+
+.container .item1 .service{
+	background:#ec5741 url(../images/icon_0_15.jpg) no-repeat center;
+}
+
+.container .item1 .wether{
+	background:#ec5741 url(../images/icon_0_21.png) no-repeat center;
+}
+
+.container .item1 li{
+	background:url(../images/ser-bg.png) no-repeat;
+	height:128px;
+	width:360px;
+	float:left;
+	padding:0 20px 20px 0;
+}
+
+.container .piece{
+	width:265px;
+	height:123px;
+	background:#f6f6f6;
+	padding-left:23px;
+	float:right;
+}
+
+.container .piece h3{
+	color:#535152;
+	line-height:40px;
+	text-transform:uppercase;
+	font-size:14px;
+} 
+
+.container .piece p{
+	color:#a6a6a6;
+	line-height:20px;
+	font-size:12px;
+}
+
+.many_feature li{
+	float:left;
+}
+
+.many_feature li a{
+	display: block;
+	height:235px;
+	width:380px;
+	text-align:center;
+}
+
+.many_feature li a:hover h3{
+	color:#ed5844;
+}
+
+.many_feature a h3{
+	font-size:18px;
+	color:#363636;
+	text-transform:uppercase;
+	line-height:39px;
+	font-weight: normal;
+}
+
+.many_feature a p{
+	font-size:12px;
+	color:#696969;
+	line-height:23px;
+}
+
+.many_feature a i{
+	display: inline-block;
+	width:100px;
+	height:79px;
+	background:url(../images/img-sprite.png);
+}
+
+.many_feature  .design i{
+	background-position:left -11px; 
+}
+
+.many_feature  .reload i{
+	background-position:-100px -11px; 
+}
+
+.many_feature  .layout i{
+	background-position:-200px -11px; 
+}
+
+.many_feature .customize i{
+	background-position:-300px -11px; 
+}
+
+.many_feature  .support i{
+	background-position:-400px -11px;  
+}
+
+.many_feature  .iphone {
+	text-align:center;	
+}
+
+.many_feature  .iphone img{
+	width:380px;
+}
+

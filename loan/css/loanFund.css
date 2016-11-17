@@ -1,0 +1,254 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd{
+    margin:0;
+    padding:0;
+}
+
+ul,li{
+    list-style:none;
+}
+
+html,body{
+    font-size:14px;
+    background:#333;
+    color:#666;
+    font-family: 'microsoft yahei';
+}
+
+label{
+    font-style: normal;
+    font-weight:normal;
+}
+
+input[type="text"]{
+    border-radius: 5px;
+    border:1px solid #999;
+    margin:0 5px;
+    padding:5px 10px;
+}
+
+input[type="text"]:focus{
+    outline-style:none;
+    border:1px solid #337ab7;
+}
+
+select{
+    height:30px;
+    border:1px solid #999;
+    background: none;
+    padding:0 10px;
+    border-radius:5px;
+    background-color: #fff;
+
+}
+
+
+.clearfix{}
+
+.clearfix::after{
+    content:"";
+    display: block;
+    height:0;
+    visibility: hidden;
+    width:100%;
+    clear:both;
+}
+
+.ante-line{ }
+
+.ante-line:after{
+    content:"";
+    display: block;
+    height:1px;
+    border-bottom:1px solid #ccc;
+    box-shadow: 0 2px 0 #fff;
+
+}
+
+.subTitle{
+    font-size:16px;
+    color:#333;
+    line-height:45px;
+}
+
+.wrap{
+    width:800px;
+    margin:30px auto 0;
+    background:#f5f5f5;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    overflow: hidden;
+    position:relative;
+
+
+}
+
+.wrap ul li{
+    float:left;
+    height:45px;
+    line-height:45px;
+}
+
+.active{
+    background: #d9534f;
+}
+
+.wrap li a{
+    color:#666;
+    text-decoration: none;
+    padding:0 15px;
+    border-right:1px solid #ddd;
+    box-shadow: 1px 0 0 #fff;
+}
+
+.wrap li:last-child a{
+    border-right:none;
+}
+
+.list-unstyled .active  a{
+    color:#eee;
+    border-right-color:#d9534f;
+}
+
+.wrap .close{
+    font-family:sunsim;
+    font-size:18px;
+    color:#999;
+    position: absolute;
+    right:20px;
+    top:10px;
+    font-weight:100;
+    opacity:1;
+    font-style: normal;
+    text-shadow: none;
+
+}
+
+.wrap .appName{
+    font-size:18px;
+    color:#ccc;
+    padding-left:15px;
+    font-weight:100;
+    line-height:45px;
+    background-color: #585858;
+    margin-bottom: 10px;
+
+}
+
+.wrap .inputPage{
+    float:left;
+    width:460px;
+    padding:10px 15px;
+    border-right:1px solid #ddd;
+
+}
+
+ .inputPage .compute p{
+    font-size:20px;
+     line-height:45px;
+     color:#333;
+     padding-bottom:5px;
+ }
+
+.inputPage .compute .loanType label{
+    padding:5px;
+}
+
+.inputPage .computeType p{
+    line-height: 40px;
+}
+
+.inputPage .compute .computeType p {
+
+}
+
+.inputPage .computeType .computeTab{
+    padding-left:30px;
+}
+.inputPage .computeType .computeType1{
+    line-height:30px;
+}
+
+.inputPage .computeType .area{
+    padding:10px 0;
+}
+
+.inputPage .computeType .area label{
+    padding:5px 0
+}
+
+.inputPage .totalFund{
+    display: none;
+}
+
+.inputPage .computeType .accumulationYears{
+    padding:10px 0 20px 30px;
+}
+
+
+ .inputPage .interest{
+    padding:10px 0;
+}
+
+.inputPage .interest .interestChoice{
+    padding:5px 0 10px 0;
+}
+
+.inputPage .interest .interestChoice label {
+    padding:15px 0;
+}
+
+.inputPage .repayment{
+    padding:10px 0 15px 0;
+}
+
+.inputPage .repayment label{
+    padding:0 10px;
+
+}
+
+.inputPage .computeBtns{
+    padding-bottom:10px;
+}
+
+
+/*右边*/
+.wrap .resultPage{
+    float:right;
+    width:300px;
+}
+
+.wrap .resultPage{
+    padding:10px 15px;
+}
+
+.wrap .resultPage p{
+    line-height:30px;
+}
+
+.wrap .resultPage label{
+    padding:5px 0;
+    width:80px;
+}
+
+.wrap .resultPage input[type='text'] {
+    margin:10px 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

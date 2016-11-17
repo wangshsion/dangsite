@@ -1,0 +1,10 @@
+[
+  {"title":"低糖天然秘制罐头", "price":"9999.00", "goodsImg":"images/001.jpg", "quantity":1},
+  {"title":"天然野生花茶", "price":"399.00", "goodsImg":"images/001.jpg" , "quantity":1},
+  {"title":"深山老树密柚", "price":"699.00", "goodsImg":"images/001.jpg" , "quantity":1},
+  {"title":"农家茶树油", "price":"300.00", "goodsImg":"images/001.jpg" , "quantity":1},
+  {"title":"深山野生枞菌", "price":"9999.00", "goodsImg":"images/001.jpg" , "quantity":1},
+  {"title":"小溪野生小鱼", "price":"678.00", "goodsImg":"images/001.jpg" , "quantity":1},
+  {"title":"深山野生柑桔", "price":"2563.00", "goodsImg":"images/001.jpg" , "quantity":1}
+
+]

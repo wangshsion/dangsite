@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彭氏农产品开发有限公司</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="lib/ionic/css/ionic.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+    <!--导入主程序-->
+    <script src="js/app.js"></script>
+
+    <!--导入首页控制器-->
+    <script src="views/home/home.js"></script>
+
+    <!--导入关于我们控制器-->
+    <script src="views/introduce/introduce.js"></script>
+
+    <!--导入企业简介控制器-->
+    <script src="views/contact/contact.js"></script>
+
+    <!--导入新闻活动控制器-->
+    <script src="views/news/news.js"></script>
+
+    <!--导入产品展示控制器-->
+    <script src="views/products/products.js"></script>
+
+
+</head>
+<body ng-app="pens" ng-controller="pensController">
+
+<!--header-->
+<ion-nav-bar class="bar-dark">
+
+    <ion-nav-back-button></ion-nav-back-button>
+
+    <!--<ion-nav-buttons class="button">-->
+        <!--<button class="button button-icon ion-navicon" menu-toggle="right"></button>-->
+    <!--</ion-nav-buttons>-->
+</ion-nav-bar>
+
+
+<ion-nav-view>
+
+</ion-nav-view>
+
+
+</body>
+</html>

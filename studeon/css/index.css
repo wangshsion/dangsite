@@ -1,0 +1,470 @@
+@charset 'utf-8';
+/*banner start*/
+.banner{
+	height:520px;
+	background: url(../images/bg.jpg) repeat-x;
+
+}
+
+.banner .poster_text{
+	float: left;
+	padding-top:98px;
+	width:400px;
+}
+
+.banner .poster_text p{
+	font-size:70px;
+	font-family: 'DejaVu Sans Mono','sans';
+	color:#fff;
+	line-height:83px; 
+	background:#ed5844;
+	margin-bottom:1px;
+	padding:0 92px 0 8px;
+	float:left;
+}
+
+.banner .poster_pic{
+	float: right;
+	width:666px;
+	height:441px;
+	background-size:635px;
+	margin-top:72px;
+	text-align:right;
+}
+
+.banner .block{
+	display: block;
+	float:left;
+	width:50px;
+	height:25px;
+	background:#fff;
+	margin:47px 8px 0 0;
+}
+
+.banner .block:hover{
+	background:#ed5844;
+	cursor:pointer;
+}
+
+.banner .currenty{
+	background: #ed5844;
+}
+
+.banner .poster_pic img{
+	width:635px;
+}
+
+.main .item1{
+	padding-top:70px; 
+	height:346px;
+}
+
+.main .title{
+	color:#303435;
+	font-size:18px;
+	text-transform: uppercase;
+	background:#fff;
+	line-height:26px;
+	position: absolute;
+	left:0;
+	top:-15px;
+	padding-right:6px;
+
+}
+
+.main .item1 li{
+	float:left;
+	height:126px;
+	width:360px;
+	background:url(../images/ser-bg.png) no-repeat;
+} 
+
+.main .item1 i{
+	display:block;
+	float:left;
+	height:123px;
+	width:67px;
+}
+
+.main .item1 .speed{
+	background:#ec5741 url(../images/icon_0_03.png) no-repeat center;
+}
+
+.main .item1 .master{
+	background:#ec5741 url(../images/icon_0_09.png) no-repeat center;
+}
+
+.main .item1 .developers{
+	background:#ec5741 url(../images/icon_0_06.png) no-repeat center;
+}
+
+.main .item1 .details{
+	background:#ec5741 url(../images/icon_0_18.png) no-repeat center;
+}
+
+.main .item1 .service{
+	background:#ec5741 url(../images/icon_0_15.jpg) no-repeat center;
+}
+
+.main .item1 .wether{
+	background:#ec5741 url(../images/icon_0_21.png) no-repeat center;
+}
+
+.main .item1 li{
+	background:url(../images/ser-bg.png) no-repeat;
+	height:128px;
+	width:360px;
+	float:left;
+	padding:0 20px 20px 0;
+}
+
+.main .piece{
+	width:265px;
+	height:123px;
+	background:#f6f6f6;
+	padding-left:23px;
+	float:right;
+}
+
+.main .piece h3{
+	color:#535152;
+	line-height:40px;
+	text-transform:uppercase;
+	font-size:14px;
+} 
+
+.main .piece p{
+	color:#a6a6a6;
+	line-height:20px;
+	font-size:12px;
+}
+
+/*item2 start*/
+.main .item2{
+	height:191px;
+	border-top:3px double #ddd;
+	padding-top:56px;
+}
+
+.main .item2 .content{
+	background:#eee;
+	padding-left:30px;
+	border:1px solid #eee;
+	border-left:5px solid #ed5743;
+	height:99px;
+	padding-top:32px;
+
+}
+
+.main .item2 .scription{
+	float:left;
+	width:907px;
+}
+
+.main .item2 .content h3{
+	font-size:14px;
+	color:#535152;
+	line-height:37px;
+	text-transform: uppercase;
+	font-weight:600;
+}
+
+.main .item2 .content p{
+	color:#a6a6a6;
+	line-height:25px;
+	font-size:12px;
+
+}
+
+.main .item2 .buy_btn{
+	float:left;
+	padding-top:8px;
+
+}
+
+.main .item2 .buy_btn a{
+	display:block;
+	width:105px;
+	height:57px;
+	border-radius:10px;
+	box-shadow:0 0 5px #af3c33 inset ;
+	line-height: 57px;
+	color:#fff;
+	text-transform:uppercase;
+	background:#ed5844 url(../images/windows.png) no-repeat 17px center;
+	padding-left:52px;
+}
+
+/*item3 start*/
+
+.main .item3{
+	height:526px;
+	border-top:3px double #ddd;
+	display: flex;
+	position:relative;
+	padding-top:49px;
+}
+
+.main .item3 .portfolio{
+	height:442px;
+	width:247px;
+	background-color:#eee;
+	padding:14px;
+	margin-right:13px;
+
+}
+
+.main .item3 .last{
+	margin-right:0;
+}
+
+.item3 .portfolio .photo{
+	text-align:center;
+	position: relative;
+	line-height:0;
+}
+
+.item3 .portfolio .photo img{
+	width:247px;
+}
+
+
+.item3 .photo .sort{
+	color:#fff;
+	font-size:12px;
+	line-height:24px;
+	width:114px;
+	height:26px;
+	text-transform: uppercase;
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+
+.item3 .photo .link{
+	background:url(../images/studeon_index_03.jpg) no-repeat;
+	display: block;
+	height:27px;
+	width:27px;
+	position:absolute;
+	left:190px;
+	bottom:0;
+
+}
+
+.item3 .photo .zoom{
+	background:url(../images/studeon_index_05.jpg) no-repeat;
+	display: block;
+	height:27px;
+	width:27px;
+	position: absolute;
+	right:0;
+	bottom:0;
+}
+
+
+.item3 .portfolio  h3{
+	color:#363a46;
+	line-height:47px;
+	margin:3px 0 8px;
+	font-size:14px;
+	border-bottom:1px solid #e7e7e7;
+	font-weight:600;
+}
+
+.item3 .portfolio p{
+	color:#9a9a9a;
+	font-size:13px;
+	line-height: 23px;
+}
+
+/*item4 start*/
+.item4{
+	height:187px;
+	border-top:3px double #f4f4f4 ;
+	padding-top:57px;
+}
+
+.item4 .content{
+	border:1px solid #eee;
+	border-left:5px solid #ed5743;
+	height:98px;
+	background:#eee;
+	padding-left:30px;
+	padding-top:32px;
+	background:url(../images/index_03.png) no-repeat right center;
+} 
+
+.item4 .content h3{
+	font-size:14px;
+	color:#535152;
+	line-height:37px;
+	text-transform: uppercase;
+	font-weight:600;
+}
+
+.item4 .content p{
+	color:#a6a6a6;
+	line-height:25px;
+	font-size:12px;
+}
+
+/*item5 start*/
+.item5{
+	height:568px;
+	border-top:3px double #f4f4f4 ;
+	padding-top:42px;
+}
+
+.item5 .left{
+	float:left;
+	position: relative;
+}
+
+.item5 .title_2{
+	top:-58px;
+}
+
+.item5 .left .block{
+	width:380px;
+	float:left;
+	
+}
+
+.item5 .left .block .pic{
+	width:340px;
+	height:255px;
+	position: relative;
+	line-height: 0;
+}
+
+.item5 .block span{
+	display: block;
+	position: absolute;
+	height:40px;
+	width:40px;
+		
+}
+
+.item5 .left .block .edit{
+	background:url(../images/studeon_index_10.jpg) no-repeat;
+	left:256px;
+	bottom:0;
+}
+
+.item5 .block .date{
+	background:url(../images/studeon_index_13.jpg) no-repeat;
+	right:0;
+	bottom:0;
+}
+
+.item5 .left .content{
+	width:340px;
+}
+
+.item5 .left .block h4{
+	font-size:14px;
+	color:#535152;
+	line-height:46px;
+	text-transform: uppercase;
+	font-weight:600;
+}
+
+.item5 .left .block p{
+	color:#a6a6a6;
+	line-height:25px;
+	font-size:12px;
+	padding:12px 0;
+	border-bottom:1px solid #eee;
+	border-top:1px solid #eee;
+}
+
+.item5 .left .block .more{
+	line-height:24px;
+	color:#444;
+	font-size:14px;
+	margin:32px 20px 0 0;
+	background:url(../images/more_03.jpg) no-repeat right center;
+	display: block;
+	width:97px;
+	padding-left:13px;
+}
+
+/*item5 right start*/
+.item5 .right{
+	float:right;
+	position: relative;
+	height:568px;
+	width:380px;
+	
+}
+
+.item5 .right .top{
+	padding-bottom:7px;
+
+
+}
+
+.item5 .right .top img{
+	width:87px;
+}
+
+.item5 .right .content{
+	float:right;
+	width:270px;
+	
+}
+
+
+.item5 .right .content h4{
+	font-size:14px;
+	color:#535152;
+	line-height:24px;
+	text-transform: uppercase;
+	padding-bottom:5px;m
+}
+
+.item5 .right .content p{
+	color:#2d2d2d;
+	font-size:14px;
+	line-height:24px;
+
+}
+
+.item5 .right .content .site{
+	color:#ed5844;
+	
+}
+
+.item5 .right .commend{
+	color:#c9c9c9;
+	font-style:italic;
+	text-indent:2em;
+	font-size:13px;
+	line-height:21px;
+	padding-bottom:14px;
+	background:url(../images/quotes.png) no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

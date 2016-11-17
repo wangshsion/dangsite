@@ -1,0 +1,284 @@
+@charset 'utf-8';
+.title{
+	font-size:25px;
+	text-transform: uppercase;  
+	line-height: 53px;
+	font-weight:100;
+
+}
+
+.container{
+	
+	
+}
+
+.mainbody{
+	height:1971px;
+}
+
+.main{
+	width:825px;
+	padding-left:16px;
+	float:left;
+	padding-top:42px;
+
+}
+
+.main h2{
+	font-size:19px;
+	text-transform:uppercase;
+	line-height:22px;
+	font-weight:400;
+	
+}
+
+.main b{
+	font-weight:normal;
+}
+
+.main .small_title{
+	font-size:17px;
+	line-height:25px;
+	padding:7px 0; 
+}
+
+
+.main .content{
+	font-size:12px;
+	color:#999999;
+	line-height:25px; 
+	padding-bottom:17px;
+}
+ 
+.main .art_info{
+	color:#999999;
+	font-size:12px;
+	line-height:45px; 
+
+}
+
+.main .article .big_pic{
+	position: relative;
+	line-height:0;
+}
+
+.main .article .big_pic i{
+	background:url(../images/s-icons2.png) no-repeat;
+	width:45px;
+	height:41px;
+	font-style:normal;
+	font-size:0;
+}
+
+.main .article .big_pic .camera{
+	background-position: -239px -122px;
+	position:absolute;
+	left:725px;
+	bottom:6px;
+}
+
+.main .article .big_pic .date{
+	background-position: -288px -122px;
+	position:absolute;
+	left:776px;
+	bottom:6px;
+}
+
+.main .article img{
+	width:813px;
+	border:6px solid #ed5844;
+}
+
+ 
+/*leave a comment start*/
+.leave_comment{
+	width:809px;
+	padding:0 8px; 
+}
+
+.leave_comment label{
+	
+	line-height:21px;
+	color:#2d2d2d;
+
+}
+
+.leave_comment input{
+	height:38px;
+	width:776px;
+	background:#eee;
+	line-height:38px;
+	color:#636363;
+	font-size:14px;
+	padding:0 16px;
+	margin-bottom:19px;
+	border:none;
+}
+
+.leave_comment textarea{
+	width:776px;
+	height:118px;
+	background:#eee;
+	padding:14px;
+	border:none;
+	font-size:16px;
+	color:#636363;
+	font-family: Arial, 'microsoft yahei';
+	resize:none;
+}
+
+.leave_comment .btn{
+	height:51px;
+	width:145px;
+	line-height:51px;
+	margin:16px 0 39px;
+	background:#ed5844;
+}
+
+.comments{
+	padding:4px 0 41px;
+
+}
+
+.comment{
+	border:1px solid #d4d4d4;
+	height:182px;
+	border:1px solid #d4d4d4;
+	padding:17px 0 0 15px;
+	margin-bottom:40px;
+}
+
+.comments .photo{
+	width:158px;
+	padding-right: 48px;
+	float:left;
+	line-height:0;
+}
+
+.comments .photo img{
+	width:158px;
+}
+
+.comments .info{
+	width:587px;
+	float:left;
+}
+
+
+.comments .info h4{
+	text-transform: uppercase;
+	font-size:14px;
+	line-height:18px;
+	color:#696967;
+	font-weight:bolder;
+}
+
+.comments .info p{
+	font-size:12px;
+	color:#a8a8a8;
+	line-height:23px;
+}
+
+.comments .info .date{
+	color:#c3c3c3;
+	font-size:13px;
+	line-height:50px;
+	padding-top:12px;
+	font-weight:bolder;
+	
+}
+
+.comments .info .btn{
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	width:99px;
+	height:43px;
+	line-height:43px;
+	float:right;
+	margin-right:97px;
+}
+
+/*右边开始*/
+.side{
+	width:269px;
+	padding-left:30px;
+	float:left;
+	padding-top:42px;
+
+}
+
+.side h3{
+	font-size:17px;
+	font-weight:300;
+	text-transform: uppercase;
+	line-height:18px;
+}
+
+.side .title_2{
+	line-height:58px;
+}
+
+.side .search{
+	width:253px;
+	height:42px;
+	border:1px solid #dbdbdb;
+	background:#fff;
+	margin:25px 0 14px 0;
+
+}
+
+.side input[type="text"]{
+	padding:0 18px;
+	color:#99999b;
+	border:none;
+	height:100%;
+	width:182px;
+	float:left;
+}
+
+.side .search_btn{
+	height:100%;
+	width:35px;
+	border:none;
+	background:transparent url(../images/search.png) no-repeat center;
+	cursor:pointer;
+
+}
+
+.side .lists li{
+	line-height:23px;
+	padding-left:26px;
+	background:url(../images/right_arrow.jpg) no-repeat left center;
+}
+.side .lists li a{
+	color:#9c9c9e;
+	font-size:13px;
+}
+
+.side .feature{
+	padding:4px 0 0 4px;
+}
+
+.side .feature a{
+	float: left;
+	line-height: 0;
+	padding:0 12px 8px 0;
+}
+
+.side .feature img{
+	width:114px;
+	height:73px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

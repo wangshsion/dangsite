@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>callendar</title>
+	<style>
+
+		*{
+			padding:0;
+			margin:0;
+
+		}
+
+		body{
+			background: #262626;
+		}
+
+		ul,li{
+			list-style:none;
+		}
+		.callendar{
+			height:500px;
+			padding:30px 30px;
+			background: #fafafa;
+			border:1px solid #ddd;
+			width:450px;
+			margin:100px auto;
+			text-align: center;
+			position: relative;
+		}
+
+		.callendar .prevBtn,.callendar .nextBtn{
+			
+			position:absolute;
+			height:20px;
+			width:20px;
+			border-top:1px solid #666;
+			border-left:1px solid #666;
+			cursor:pointer;
+		}
+
+		.callendar .prevBtn{
+			transform: rotate(-45deg);
+			left:95px;
+			top:53px;
+
+		}
+
+		.callendar .nextBtn{
+			transform: rotate(135deg);
+			right:108px;
+			top:53px;
+		}
+
+
+		.callendar h2{
+			letter-spacing: 2px;
+			font-size:30px;
+			color:#555;
+			font-weight: 300;
+			line-height: 40px;
+			height:40px;
+			padding:10px 0;
+			
+		}
+
+		.week{
+			padding-top:20px;
+			display: inline-block;
+
+		}
+
+		.clearfix{}
+		.clearfix::after{
+			content:"";
+			display:block;
+			height:0;
+			width:0;
+			visibility: none;
+			clear:both;
+		}
+
+		.week{
+			padding:15px 0;
+			width:100%;
+		}
+		.week li{
+			font-weight:300;
+			padding:2px 0;
+			box-sizing: border-box;
+			width:14.2857%;	
+			float:left;
+			border-right:1px solid #ccc;
+		}
+
+		.dateUl .fade{
+			color:#aaa;
+		}
+
+		.week li:last-child{
+			border:0;
+		}
+
+		.dateUl li{
+			float:left;
+			font-size:18px;
+			font-weight:300;
+			padding:10px 0;
+			width:14.2857%;
+			text-align: center;
+			border-bottom:1px solid #ccc;
+		}
+
+		
+	</style>
+</head>
+<body>
+
+	<div class="callendar">
+		<span class="prevBtn"></span>
+		<span class="nextBtn"></span>
+		<h2>2016年</h2>
+		<ul class="week clearfix">
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+			<li>六</li>
+			<li>日</li>
+		</ul>
+		<ul class="dateUl clearfix">
+			
+		</ul>
+	</div>
+
+	<script>
+	var dateUl=document.getElementsByClassName("dateUl")[0];
+	var callendar=document.getElementsByClassName("callendar")[0];
+	var prevBtn=callendar.getElementsByClassName("prevBtn")[0];
+	var nextBtn=callendar.getElementsByClassName("nextBtn")[0];
+	var n,int2=1;
+	
+	
+	/*实例时间对象*/
+	var oDate=new Date();
+	var oYear=oDate.getFullYear();
+	var thisMonth=oDate.getMonth();
+	var thisYear=oDate.getFullYear();
+	var toDay=oDate.getDate();
+	var thisTime=thisYear+(thisMonth<10? "0"+thisMonth:thisMonth);
+	//console.log(thisTime)
+	var allDay;
+	
+	/*为上一月按钮绑定事件*/
+	nextBtn.onclick=function(){
+
+		n++;
+		oDate.setMonth(n);
+		if(n==12){
+			n=0;
+			oDate.setFullYear(oYear+=1);	
+		}
+
+		tagMonth();
+		return false;
+	}
+
+	prevBtn.onclick=function(){
+		n--
+		oDate.setMonth(n);
+		if(n==-1){
+			n=11;
+			oDate.setFullYear(oYear-=1);	
+		}
+		tagMonth();
+		return false;
+	}
+
+	function tagMonth(){
+		//获取月;
+		var oMonth=oDate.getMonth();//获取调整之后的月份
+		
+		n=oMonth;	//记录当前月份
+
+		var changeT=oYear.toString()+(oMonth<10? '0'+oMonth:oMonth);
+
+		//changeTime+=oDate.getDate();
+		//console.log(changeT,thisTime)
+		var oWeek=oDate.getDay(); //获取星期
+
+		/*设置上月结束与本月开始的星期差*/
+
+		/*取上个月的最后1天*/
+		oDate.setMonth(oMonth-1,0);
+		var preLastDay=oDate.getDate();//取上一月总天数
+
+
+		/*取本月的最后1天*/
+		oDate.setMonth(oMonth+1,0);
+		allDay=oDate.getDate();//取本月总天数
+
+		/*把时间调回当月1号*/
+		oDate.setDate(1);
+
+
+		
+		var startWeek=oDate.getDay();	//获取本月第1天是周几
+		if(startWeek==0){				//如果是周日，把获得的星期日的值0改为7;
+			startWeek=7;
+		}
+
+		//在切换月份时，把之前已经注入的li元素清除;
+		dateUl.innerHTML="";
+
+		//上一月总天数减去本月1号的起始周与周一的差;
+		preLastDay= preLastDay-startWeek+1;	//加1因为周从一开始;
+		for(var i=0;i<startWeek;i++){
+			var li=document.createElement("li");
+			li.className="fade";
+			li.innerHTML=preLastDay++;
+			dateUl.appendChild(li);
+		}
+
+		for(var i=0;i<allDay;i++){
+			var li=document.createElement("li");
+			li.innerHTML=i+1;
+			dateUl.appendChild(li);
+		}
+
+		var sum=startWeek+allDay
+		if(sum%7!=0){
+			var remainderNum=(parseInt(sum/7)+1)*7;
+		}
+		
+		remainderNum=remainderNum-sum;	//计算每月结束,差多少天等于35，因为是格子是35格；
+		//console.log(remainderNum)
+		for(var i=1;i<=remainderNum;i++){
+			var li2=document.createElement("li");
+			li2.innerHTML=i;
+			dateUl.appendChild(li2);
+
+		}
+		
+
+		/*取所有li*/
+		var aLi=dateUl.getElementsByTagName("li");
+		/*如果切换回本月，加上星期样式，今日高亮，过去减淡样式*/
+		if(oMonth==thisMonth && thisYear==oDate.getFullYear()){
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[i].innerHTML<toDay){
+					aLi[i].className="fade";
+				}else if(aLi[i].innerHTML==toDay && toDay<10){
+					aLi[1].style.backgroundColor="orange";
+				}else if(aLi[i].innerHTML==toDay && toDay>20){
+					aLi[0].style.backgroundColor="orange";
+				}
+			}
+		}
+
+		if(changeT<thisTime){
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].className="fade";
+			}
+		}
+
+
+		for(var i=0;i<aLi.length;i++){
+			if(i%7==5 || i%7==6){
+				aLi[i].style.color="red";
+			}
+		}
+
+		//以标题等于当前时间;
+		var title=document.getElementsByTagName("h2")[0];
+		title.innerHTML=oYear+'年'+(oMonth+1)+'月';
+	}
+	//页面首次加载时，先调用一次
+	tagMonth();
+	</script>
+	
+</body>
+</html>

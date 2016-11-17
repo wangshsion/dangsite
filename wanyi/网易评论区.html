@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style></style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/angular.min.js"></script>
+
+    <script src="js/filter.js"></script>
+
+
+    <script>
+        var myApp=angular.module('myApp',['myFilter']);
+        myApp.controller('myCtroller',function ($scope ,$http) {
+            $scope.date=new Date();
+            $scope.data="";
+
+            //http服务请求json数据
+            $http.get('data/conmments.json').success(function (data) {
+                $scope.data=data;
+            })
+
+            $scope.pageNum=1;
+            $scope.pageSize=6;
+
+
+            //计算页数
+            $scope.totalPage=function () {
+                var total = Math.ceil($scope.data.length/ $scope.pageSize);
+                var pageArr=[]
+                for(var i = 0; i<total; i++){
+                    pageArr.push(i+1);
+                }
+
+                return pageArr;
+
+            }
+
+            $scope.pageAll=$scope.totalPage();
+
+
+            //计算
+            $scope.selectPage = function (newPage) {
+                $scope.pageNum = newPage;
+
+            };
+
+            $scope.pre=function () {
+
+                $scope.pageNum--;
+
+                if($scope.pageNum<1) {
+                    $scope.pageNum = 1;
+                }
+            }
+
+            $scope.next=function () {
+
+                $scope.pageNum++;
+
+                if($scope.pageNum> $scope.pageAll.length) {
+                    $scope.pageNum = $scope.pageAll.length;
+                }
+
+            }
+
+            //支持的方法
+           // $scope.up=0;
+            $scope.clicked = [];
+            $scope.approval = function (index) {
+                if (!$scope.clicked[index]) {
+                    if ($scope.pageNum != 1) {
+                        $scope.data[index + $scope.pageSize * ($scope.pageNum - 1)].agree += 1;
+                    } else {
+                        $scope.data[index].agree += 1;
+                    }
+
+                    $scope.clicked [index]= false;
+                    $scope.clicked[index]=true;
+
+                }
+            }
+
+            //踩的方法
+            $scope.oppClicked = [];
+            $scope.opposeFn = function (index) {
+
+                if(!$scope.oppClicked[index]){
+                    if($scope.pageNum != 1){
+                        $scope.data[index+ $scope.pageSize*($scope.pageNum-1)].oppose+=1;
+                  }else{
+                      $scope.data[index].oppose+=1;
+                    }
+                }
+
+                $scope.oppClicked[index]= false;
+                $scope.oppClicked[index]=true;
+
+
+            }
+
+
+
+        })
+
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtroller">
+<div class="container">
+
+
+    <!--区域头部-->
+    <div class="header clearfix">
+        <div class="btnBox">
+            <a href="" class="" >快递发贴</a>
+            <a href="" class="">去跟贴广场去看看></a>
+        </div>
+
+        <div class="pageBtn">
+            <a href="" class="" ng-click="pre()">上一页</a>
+            <a href="" class="" ng-click="selectPage(item)" ng-repeat="item in totalPage()">{{item}}</a>
+            <a href="" class="" ng-click="next()">下一页</a>
+        </div>
+    </div>
+
+    <div class="inputBox clearfix" ng-hide="true">
+        <form action="" name="contForm">
+                <textarea name="talk" id="" cols="60" rows="6" >
+                </textarea>
+            <div class="register pull-left">
+                <input type="text" placeholder="如：example@163.com">
+                <input type="password" placeholder="输入用户密码">
+            </div>
+
+            <div class="send pull-right">
+                <label for="" class="checkbox">
+                    <input type="checkbox" >
+                    记住登录
+
+                </label>
+
+                <button type="button">登录并发表</button>
+            </div>
+
+        </form>
+    </div >
+
+    <!--列表头部-->
+    <ul class="list-unstyled">
+        <li class="listTitle">
+            <div class="hotConmment pull-left">
+                <h4>热门跟贴</h4>
+                <p>(跟贴<span class="redcolor">0</span>条 有<span class="redcolor">10474</span>人参与)</p>
+            </div>
+
+            <div class="note pull-right">
+                <a href="">跟贴用户自律公约 | </a>
+                <a href="">手机也能看跟贴>></a>
+            </div>
+        </li>
+        <li class="comment-list clearfix"  ng-repeat="cont in data | pagerFilter:pageNum:pageSize">
+            <div class="contente">
+                <div class="userPic pull-left">
+                    <a href=""><img ng-src="{{cont.userPic}}" alt=""></a>
+                </div>
+                <div class="userInfo pull-left">
+                    <div class="username clearfix">
+                        <p class="userName pull-left"><a class="btn-link">{{cont.content}}</a> [网易西藏山南地区手机网友]</p>
+                        <p class="pull-right time">{{date | date:"yyyy年MM月dd日 HH:mm:ss"}}</p>
+                    </div>
+
+                    <p class="userComment">{{cont.content}}</p>
+
+                </div>
+            </div>
+
+            <div class="fn pull-right">
+                <p>
+                    <a href="">顶<span class="redcolor" ng-click="approval($index)">[{{cont.agree}}]</span></a>
+                    <a href="">踩<span class="redcolor" ng-click="opposeFn($index)">[{{cont.oppose}}]</span></a>
+                    <a href="">回复</a>
+                    <a href="">收藏</a>
+                    <a href="">分享</a>
+                    <a href="">复制</a>
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
