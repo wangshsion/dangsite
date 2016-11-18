@@ -5,7 +5,11 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/util.js"></script>
-    <script src="js/whichCity.js"></script>
+    <script src="../loan/js/jquery-3.1.0.js"></script>
+    <script src="js/whichCity.js">
+        
+        flightHandler()
+    </script>
     <style>
 
         body{
@@ -147,80 +151,79 @@
             }
             function fill() {
 
-                
-
                 //获取用户选择的城市
                 var city = document.getElementById("city").value;
 
                 //从网上获取用户选择的城市天气数据
-                var url = "http://wthrcdn.etouch.cn/weather_mini?city=" + whichCity(city);
+                var url = "http://wthrcdn.etouch.cn/weather_mini?city="+whichCity(city);
+                 $.ajax({  
+                    url:url,  
+                    dataType:'jsonp',  
+                    data:'',  
+                    jsonp:'callback',  
+                    success:function(data) {  
+                      //获取天气值 ，然后判断显示对应的天气图标
+                        var weatherIco=whatWeather(data.data.forecast[0].type);
+                       // onlyNum(data.data.forecast[0].low)
+
+                        //把城市名给DOM相应的元素
+                        document.getElementById('cityName').innerHTML = data.data.city;
+
+                        //把天气数据和对应的图标给DOM相应的元素
+                        document.getElementById('weatherType').innerHTML ='<span>'+weatherIco+';</span>'+data.data.forecast[0].type;
+
+                        //把气温数据和对应的图标给DOM相应的元素
+                        document.getElementById('temperature').innerHTML = data.data.wendu+'<sup>○</sup>';
+
+                        //把日期传给DOM元素
+                        document.getElementById('air').innerHTML = data.data.forecast[0].date;
+
+                        //把当日的最低气温传给DOM元素
+                        document.getElementById('warnning').innerHTML = data.data.forecast[0].low;
 
 
-                //发送ajax请求
-                $.getJSON(url, function (data) {
 
-                    //获取天气值 ，然后判断显示对应的天气图标
-                    var weatherIco=whatWeather(data.data.forecast[0].type);
-                   // onlyNum(data.data.forecast[0].low)
-
-                    //把城市名给DOM相应的元素
-                    document.getElementById('cityName').innerHTML = data.data.city;
-
-                    //把天气数据和对应的图标给DOM相应的元素
-                    document.getElementById('weatherType').innerHTML ='<span>'+weatherIco+';</span>'+data.data.forecast[0].type;
-
-                    //把气温数据和对应的图标给DOM相应的元素
-                    document.getElementById('temperature').innerHTML = data.data.wendu+'<sup>○</sup>';
-
-                    //把日期传给DOM元素
-                    document.getElementById('air').innerHTML = data.data.forecast[0].date;
-
-                    //把当日的最低气温传给DOM元素
-                    document.getElementById('warnning').innerHTML = data.data.forecast[0].low;
+                        //为今天填充数据
 
 
+                        //获取日期
+                        var oDate=new Date();      //实例化一个日期对象
+                        var weeks=oDate.getDay();
+                        var n;
 
-                    //为今天填充数据
+                  
+                        var html='<ul class="list-group list-unstyled list-inline">';
+                        for(var i = 0; i<5; i++){
+                        n=weeks;
+                        switch(n){
+                            case 0:
+                            n='周日';
+                            break;
 
+                            case 1:
+                            n='周一';
+                            break;
 
-                //获取日期
-                var oDate=new Date();      //实例化一个日期对象
-                var weeks=oDate.getDay();
-                var n;
+                            case 2:
+                            n='周二';
+                            break;
 
-              
-               var html='<ul class="list-group list-unstyled list-inline">';
-                for(var i = 0; i<5; i++){
-                     n=weeks;
-                    switch(n){
-                        case 0:
-                        n='周日';
-                        break;
+                            case 3:
+                            n='周三';
+                            break;
 
-                        case 1:
-                        n='周一';
-                        break;
+                            case 4:
+                            n='周四';
+                            break;
 
-                        case 2:
-                        n='周二';
-                        break;
+                            case 5:
+                            n='周五';
+                            break;
 
-                        case 3:
-                        n='周三';
-                        break;
-
-                        case 4:
-                        n='周四';
-                        break;
-
-                        case 5:
-                        n='周五';
-                        break;
-
-                        case 6:
-                        n='周六';
-                        break;
-                    }
+                            case 6:
+                            n='周六';
+                            break;
+                        }
 
                      weeks++;
                      
@@ -232,7 +235,6 @@
                     weatherIco=whatWeather(data.data.forecast[i].type);
                     html+='<span>'+weatherIco+'</span>';
                     html+='<p>'+onlyNum(data.data.forecast[i].low, data.data.forecast[i].high)+'</p></li>';
-
                 }
 
                 html+='</ul>';
@@ -241,10 +243,11 @@
                 var other=document.getElementById("other").innerHTML="";
                 var other=document.getElementById("other").innerHTML=html;
 
-               
-                },function (err) {
-                    document.getElementById('cityName').innerHTML ='网络错误，代码'+err
+                },
+                timeout:3000
                 });
+
+                
             }
 
             //页面加载时调用函数,显示默认城市天气
@@ -269,10 +272,6 @@
                 }
           
             }
-
-
-
-
         }
     </script>
 </head>
@@ -335,10 +334,5 @@
             </li>
         </ul>
     </div>
-
-
-
-
-
 </body>
 </html>
