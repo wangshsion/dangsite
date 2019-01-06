@@ -3,20 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Callendar2.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="./library/util.js"></script>
 	<style>
 
-	body{
-		background: #333;
-	}
+		body{
+			background: #333;
+		}
 
 		ul,li{
 			padding:0;
 			margin:0;
 			list-style: none;
+			-webkit-user-select:none;
+   			-moz-user-select:none;
+   			-ms-user-select:none;
+   			user-select:none;
 		}
+
+		
 		.mainbody{
-			width:356px;
-			height:510px;
+			max-width:356px;
+			/*height:510px;*/
 			border:1px solid #ccc;
 			margin:0 auto;
 			border-radius: 12px;
@@ -28,6 +37,17 @@
 			background-position:242px 10px;
 
 
+		}
+
+		@media screen and (max-width:769px){
+			body{
+				/*margin:0;*/
+			}
+			.mainbody{
+					width:100%;
+					margin-top:0;
+					/*padding-top:0;*/
+				}
 		}
 
 		.mainbody .screen{
@@ -53,12 +73,14 @@
 			margin:0 auto;
 			padding-top:5px;
 			box-sizing:border-box;
-			position: relative;
+			display: flex-box;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
 		}
 
 		.mainbody .keies li{
-			height:70px;
-			width:70px;
+			width:20%;
 			text-align: center;
 			border:1px solid #ddd;
 			font-size:45px;
@@ -66,13 +88,21 @@
 			color:#999;
 			background: #eee;
 			border-radius: 50%;
-			float:left;
-			margin:6px;
 			background-image:linear-gradient(to top left,#f9f9f9,#fff);
 			cursor:pointer;
 			transition: all 0.3s;
+			margin-bottom:10px;
 
 		}
+
+		/*.mainbody .keies .cross2{
+			width:50%;
+			border-radius:0;
+			border-top-left-radius: 60px;
+			border-bottom-left-radius: 60px;
+			border-top-right-radius: 60px;
+			border-bottom-right-radius: 60px;
+		}*/
 
 		.mainbody .keies .cover{
 			width:90px;
@@ -116,7 +146,7 @@
 			color:#ccc;
 			border:none;
 		}
-	</style>
+</style>
 </head>
 <body>
 	<div class="mainbody" id="box">
@@ -128,174 +158,31 @@
 			</ul>
 		</div>
 		<ul class="keies" id="keies">
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-			<li>5</li>
-			<li>6</li>
+		
 			<li>7</li>
 			<li>8</li>
 			<li>9</li>
-			<li>0</li>
-			<li>c</li>
 			<li>+</li>
+
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
 			<li>-</li>
+
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
 			<li>*</li>
+
+			<li class="cross2">0</li>
+			<li>.</li>
+			<li class="cross2">c</li>
 			<li>/</li>
+
+	
 			<li>=</li>
 		</ul>
 	</div>
-
-	<script>
-	 var oBox= document.getElementById("box");
-	 var oKey=document.getElementById("keies");
-	 var aLi=oKey.getElementsByTagName("li");
-
-	 
-	 var show=document.getElementById("show");
-	 var showLine=show.getElementsByTagName("li");
-
-	 var oScreen=oBox.getElementsByTagName("div")[0];
-	 var n,n1,n2;
-	 var add=false,subtra=false,milti=false,devision=false;
-
- 	for(var i=aLi.length-1;i>=0;i--){
- 		aLi[i].style.left=aLi[i].offsetLeft-3+"px";
- 		aLi[i].style.top=aLi[i].offsetTop-3+"px";
- 		aLi[i].style.position="absolute";
-	}
-
-	 for(var i=0;i<aLi.length;i++){
-	 	aLi[i].onmouseover=function(){
-	 		this.className="cover";
-	 		//showLine[2].innerHTML+=this.innerHTML;
-		} 
-
-	 	aLi[i].onmouseout=function(){
-		 	for(var i=0;i<aLi.length;i++){
-		 		aLi[i].className="";
-		 	}
-	 	}
-
-	 }
-
-	 function cover(n){
-	 	aLi[n].className="cover"
-	 }
-
-	 function discover(n){
-	 	aLi[n].className=""
-	 }
-
-	 function computed(){
-	 	n1=Number(showLine[2].innerHTML);
-	 	showLine[0].innerHTML=n1;
-	 	showLine[2].innerHTML="";
-	 }
-
-	 function equalble(){
-	 	n2=Number(showLine[2].innerHTML);
-	 	showLine[1].innerHTML=n2;
-	 	showLine[2].innerHTML="";
-	 }
-
-	 document.onkeydown=keyDown;
-
-	 function keyDown(ev){
-	 	//add=false,subtra=false,milti=false,devision=false;
-	 	var oEv=ev||window.event; 
-	 	//alert(oEv.keyCode)
-	 	if(oEv.keyCode==97||oEv.keyCode==49){
-	 		cover(0)
-	 		showLine[2].innerHTML+=aLi[0].innerHTML;
-
-	 	}else if(oEv.keyCode==98||oEv.keyCode==50){
-	 		cover(1)
-	 		showLine[2].innerHTML+=aLi[1].innerHTML;
-	 	}else if(oEv.keyCode==99||oEv.keyCode==51){
-	 		cover(2)
-	 		showLine[2].innerHTML+=aLi[2].innerHTML;
-	 	}else if(oEv.keyCode==100||oEv.keyCode==52){
-	 		cover(3)
-	 		showLine[2].innerHTML+=aLi[3].innerHTML;
-	 	}else if(oEv.keyCode==101||oEv.keyCode==53){
-	 		cover(4)
-	 		showLine[2].innerHTML+=aLi[4].innerHTML;
-	 	}else if(oEv.keyCode==102 || oEv.keyCode==54){
-	 		cover(5)
-	 		showLine[2].innerHTML+=aLi[5].innerHTML;
-	 	}else if(oEv.keyCode==103 || oEv.keyCode==55){
-	 		cover(6)
-	 		showLine[2].innerHTML+=aLi[6].innerHTML;
-	 	}else if(oEv.keyCode==104 || oEv.keyCode==56){
-	 		cover(7)
-	 		showLine[2].innerHTML+=aLi[7].innerHTML;
-	 	}else if(oEv.keyCode==105 || oEv.keyCode==57){
-	 		cover(8)
-	 		showLine[2].innerHTML+=aLi[8].innerHTML;
-	 	}else if(oEv.keyCode==96 || oEv.keyCode==48){
-	 		cover(9)
-	 		showLine[2].innerHTML+=aLi[9].innerHTML;
-	 	}
-
-	 	if(oEv.keyCode==107){
-	 		add=true;
-	 	}else if(oEv.keyCode==109){
-	 		subtra=true
-	 	}else if(oEv.keyCode==106){
-	 		milti=true;
-	 	}else if(oEv.keyCode==111){
-	 		devision=true;
-	 	}
-
-	 }
-
-	 document.onkeyup=function(ev){
-	 	var oEv=ev||window.event; 
-	 	console.log(oEv.keyCode);
-	 	for(var i=0;i<aLi.length;i++){
-	 		aLi[i].className="";
-	 	}
-
- 		if(oEv.keyCode==107){
- 			//add=true;
- 			//console.log(add)
- 			computed();
- 		};
- 		if(oEv.keyCode==109){
- 			//add=true;
- 			computed();
- 		};
-
- 		if(oEv.keyCode==106){
- 			//add=true;
- 			computed();
- 		};
-
- 		if(oEv.keyCode==1111){
- 			//add=true;
- 			computed();
- 		};
-
- 		if(oEv.keyCode=106){}
-
- 		if(oEv.keyCode==13){
- 			equalble();
- 			//console.log(add)
- 			if(add==true){
- 				console.log(add)
- 				showLine[2].innerHTML=n1+n2;
- 			}else if(subtra==true){
- 				showLine[2].innerHTML=n1-n2;
- 			}else if(milti==true){
- 				showLine[2].innerHTML=n1*n2;
- 			}else if(devision==true){
- 				showLine[2].innerHTML=n1/n2;
- 			}			
-	 	}
-	}
-	</script>
-	
+<script src="./fn.js"></script>
 </body>
 </html>
