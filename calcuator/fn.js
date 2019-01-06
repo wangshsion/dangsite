@@ -46,11 +46,7 @@
 
 	document.onclick = function(e){
 		e.preventDefault();
-		if(showLine[0].innerHTML != '' && showLine[0].innerHTML != '' && showLine[2].innerHTML != '0'){
-			showLine[0].innerHTML = ''
-			showLine[1].innerHTML = ''
-			showLine[2].innerHTML = '0'
-		}
+		
 		switch(e.target.innerHTML){
 			case '+':
 			countType='add';
